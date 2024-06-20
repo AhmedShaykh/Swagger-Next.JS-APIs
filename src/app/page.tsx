@@ -1,7 +1,7 @@
-import Main from "@/Components/Main";
+import { redirect } from "next/navigation";
 
 const Home = () => {
-    return <Main />;
+    return redirect("/api-docs");
 }
 
 export default Home;
