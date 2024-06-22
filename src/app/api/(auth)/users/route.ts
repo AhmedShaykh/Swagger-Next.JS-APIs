@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import User from "@/lib/Model/UserModel";
 import { connectDB } from "@/lib/db";
-import User from "@/lib/UserModel";
 import { Types } from "mongoose";
 
 const ObjectId = require("mongoose").Types.ObjectId;
