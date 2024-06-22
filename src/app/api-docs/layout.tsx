@@ -6,7 +6,7 @@ const APISLayout = ({
     children: ReactNode
 }>) => {
     return (
-        <div className="bg-slate-100 text-zinc-500 h-full">
+        <div className="bg-[#FAFAFA] text-zinc-500 font-[600] h-full">
             {children}
         </div>
     )

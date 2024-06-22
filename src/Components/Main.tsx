@@ -6,7 +6,7 @@ const Main = async () => {
     const spec = await getApiDocs();
 
     return (
-        <div className="p-4">
+        <div className="px-4 pt-2 pb-8">
             <ReactSwagger spec={spec} />
         </div>
     )
