@@ -96,3 +96,17 @@
  *       400:
  *         description: Not Found
  */
+
+/**
+ * @swagger
+ * tags: 
+ *    - name: Categories
+ *      description: Operations About Categories
+ */
+
+/**
+ * @swagger
+ * tags: 
+ *    - name: Blogs
+ *      description: Operations About Blogs
+ */
