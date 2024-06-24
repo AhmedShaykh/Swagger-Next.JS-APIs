@@ -2,7 +2,7 @@
  * @swagger
  * tags: 
  *    - name: Users
- *      description: Operations about users
+ *      description: Operations About Users
  * api/users:
  *   get:
  *     tags:
