@@ -1,1 +1,1 @@
-# Swagger Next.JS Realtime APIs!
+# Swagger Next.JS APIs!

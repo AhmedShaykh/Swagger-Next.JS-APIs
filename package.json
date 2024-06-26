@@ -9,14 +9,22 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^3.4.1",
+    "@auth/prisma-adapter": "^2.4.1",
+    "@prisma/client": "^5.16.0",
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
     "mongoose": "^8.4.3",
     "next": "14.2.4",
+    "next-auth": "^4.24.7",
     "next-swagger-doc": "^0.4.0",
+    "prisma": "^5.16.0",
     "react": "^18",
     "react-dom": "^18",
     "swagger-ui-react": "^5.17.14"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
