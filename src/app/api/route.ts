@@ -7,19 +7,12 @@
  *   get:
  *     tags:
  *      - Users
- *     description: Returns the hello world
- *     parameters:
- *      - name: objectName
- *        in: query
- *        description: object description
- *        required: true
- *        schema:
- *          type: string
+ *     summary: Get User
  *     responses:
  *       200:
- *         description: API Success!
+ *         description: User Fetched Successfully!
  *       400:
- *         description: Not Found
+ *         description: Error 404
  */
 
 /**
@@ -28,7 +21,7 @@
  *   post:
  *     tags:
  *      - Users
- *     description: Returns the hello world
+ *     summary: Add User
  *     requestBody:
  *        required: true
  *        content:
@@ -36,15 +29,17 @@
  *            schema:
  *              type: object
  *              properties:
- *                name:
+ *                username:
  *                  type: string
- *                address:
+ *                email:
+ *                  type: string
+ *                password:
  *                  type: string
  *     responses:
  *       200:
- *         description: API Success!
+ *         description: User Added Successfully!
  *       400:
- *         description: Not Found
+ *         description: Error 404
  */
 
 /**
@@ -53,7 +48,13 @@
  *   put:
  *     tags:
  *      - Users
- *     description: Returns the hello world
+ *     summary: Update User
+ *     parameters:
+ *      - name: id
+ *        in: query
+ *        required: true
+ *        schema:
+ *          type: string
  *     requestBody:
  *        required: true
  *        content:
@@ -61,15 +62,17 @@
  *            schema:
  *              type: object
  *              properties:
- *                name:
+ *                username:
  *                  type: string
- *                address:
+ *                email:
+ *                  type: string
+ *                password:
  *                  type: string
  *     responses:
  *       200:
- *         description: API Success!
+ *         description: User Updated Successfully!
  *       400:
- *         description: Not Found
+ *         description: Error 404
  */
 
 /**
@@ -78,23 +81,18 @@
  *   delete:
  *     tags:
  *      - Users
- *     description: Returns the hello world
- *     requestBody:
+ *     summary: Delete User
+ *     parameters:
+ *      - name: id
+ *        in: path
  *        required: true
- *        content:
- *          application/json:
- *            schema:
- *              type: object
- *              properties:
- *                name:
- *                  type: string
- *                address:
- *                  type: string
+ *        schema:
+ *          type: string
  *     responses:
  *       200:
- *         description: API Success!
+ *         description: User Deleted Successfully!
  *       400:
- *         description: Not Found
+ *         description: Error 404
  */
 
 /**
