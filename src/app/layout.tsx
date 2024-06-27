@@ -1,6 +1,3 @@
-import { ReactNode } from "react";
-import Provider from "@/Components/Provider";
-import Navbar from "@/Components/Navbar";
 import { Inter } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
@@ -15,16 +12,13 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
 }: Readonly<{
-  children: ReactNode;
+  children: React.ReactNode;
 }>) {
   return (
-    <Provider>
-      <html lang="en">
-        <body className={inter.className}>
-          <Navbar />
-          {children}
-        </body>
-      </html>
-    </Provider>
+    <html lang="en">
+      <body className={inter.className}>
+        {children}
+      </body>
+    </html>
   )
 };
