@@ -1,1 +1,1 @@
-# Swagger Next.JS APIs!
+# Swagger Next.JS Restful APIs!
