@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Swagger Next.JS APIs",
-  description: "Swagger Next.JS APIs"
+  description: "Swagger Next.JS Restful APIs"
 };
 
 export default async function RootLayout({

@@ -7,8 +7,8 @@ export const getApiDocs = async () => {
         definition: {
             openapi: "3.0.0",
             info: {
-                title: "Swagger Next.JS Realtime APIs",
-                version: "1.0",
+                title: "Swagger Next.JS Restful APIs",
+                version: "1.0"
             },
             components: {
                 securitySchemes: {
