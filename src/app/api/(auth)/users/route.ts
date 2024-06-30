@@ -5,6 +5,23 @@ import { Types } from "mongoose";
 
 const ObjectId = require("mongoose").Types.ObjectId;
 
+/**
+ * @swagger
+ * tags: 
+ *    - name: Users
+ *      description: Operations About Users
+ * api/users:
+ *   get:
+ *     tags:
+ *      - Users
+ *     summary: Get User
+ *     responses:
+ *       200:
+ *         description: User Fetched Successfully!
+ *       400:
+ *         description: Error 404
+ */
+
 export const GET = async () => {
 
     try {
@@ -13,7 +30,9 @@ export const GET = async () => {
 
         const users = await User.find();
 
-        return new NextResponse(JSON.stringify(users), { status: 200 });
+        return new NextResponse(JSON.stringify(users), {
+            status: 200
+        });
 
     } catch (error: any) {
 
@@ -24,6 +43,33 @@ export const GET = async () => {
     }
 
 };
+
+/**
+ * @swagger
+ * api/users:
+ *   post:
+ *     tags:
+ *      - Users
+ *     summary: Add User
+ *     requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                username:
+ *                  type: string
+ *                email:
+ *                  type: string
+ *                password:
+ *                  type: string
+ *     responses:
+ *       200:
+ *         description: User Added Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const POST = async (request: NextRequest) => {
 
@@ -50,6 +96,39 @@ export const POST = async (request: NextRequest) => {
     }
 
 };
+
+/**
+ * @swagger
+ * api/users/{id}:
+ *   put:
+ *     tags:
+ *      - Users
+ *     summary: Update User
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                username:
+ *                  type: string
+ *                email:
+ *                  type: string
+ *                password:
+ *                  type: string
+ *     responses:
+ *       200:
+ *         description: User Updated Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const PUT = async (request: NextRequest) => {
 
@@ -98,6 +177,26 @@ export const PUT = async (request: NextRequest) => {
     }
 
 };
+
+/**
+ * @swagger
+ * api/users/{id}:
+ *   delete:
+ *     tags:
+ *      - Users
+ *     summary: Delete User
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     responses:
+ *       200:
+ *         description: User Deleted Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const DELETE = async (request: NextRequest) => {
 

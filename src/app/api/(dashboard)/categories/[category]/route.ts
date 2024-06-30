@@ -4,6 +4,35 @@ import User from "@/lib/Model/UserModel";
 import { connectDB } from "@/lib/db";
 import { Types } from "mongoose";
 
+/**
+ * @swagger
+ * api/categories/{id}?{userId}:
+ *   put:
+ *     tags:
+ *      - Categories
+ *     summary: Update Category
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                title:
+ *                  type: string
+ *     responses:
+ *       200:
+ *         description: Category Updated Successfully!
+ *       400:
+ *         description: Error 404
+ */
+
 export const PUT = async (request: NextRequest, context: { params: any }) => {
 
     const categoryId = context.params.category;
@@ -67,6 +96,26 @@ export const PUT = async (request: NextRequest, context: { params: any }) => {
     }
 
 };
+
+/**
+ * @swagger
+ * api/categories/{id}?{userId}:
+ *   delete:
+ *     tags:
+ *      - Categories
+ *     summary: Delete Category
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     responses:
+ *       200:
+ *         description: Category Deleted Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const DELETE = async (request: NextRequest, context: { params: any }) => {
 

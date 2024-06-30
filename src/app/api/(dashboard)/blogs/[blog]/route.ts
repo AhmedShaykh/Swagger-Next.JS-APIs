@@ -5,6 +5,26 @@ import User from "@/lib/Model/UserModel";
 import { connectDB } from "@/lib/db";
 import { Types } from "mongoose";
 
+/**
+ * @swagger
+  * api/blogs/{id}?{userId}&{categoryId}:
+ *   get:
+ *     tags:
+ *      - Blogs
+ *     summary: Get Blog
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     responses:
+ *       200:
+ *         description: Blog Fetched Successfully!
+ *       400:
+ *         description: Error 404
+ */
+
 export const GET = async (request: NextRequest, context: { params: any }) => {
 
     const blogId = context.params.blog;
@@ -44,6 +64,7 @@ export const GET = async (request: NextRequest, context: { params: any }) => {
                 status: 404
             });
         }
+
         const category = await Category.findById(categoryId);
 
         if (!category) {
@@ -77,6 +98,37 @@ export const GET = async (request: NextRequest, context: { params: any }) => {
     }
 
 };
+
+/**
+ * @swagger
+ * api/blogs/{id}?{userId}&{categoryId}:
+ *   put:
+ *     tags:
+ *      - Blogs
+ *     summary: Update Blog
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                title:
+ *                  type: string
+ *                description:
+ *                  type: string
+ *     responses:
+ *       200:
+ *         description: Blog Updated Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const PUT = async (request: NextRequest, context: { params: any }) => {
 
@@ -140,6 +192,26 @@ export const PUT = async (request: NextRequest, context: { params: any }) => {
     }
 
 };
+
+/**
+ * @swagger
+ * api/blogs/{id}?{userId}&{categoryId}:
+ *   delete:
+ *     tags:
+ *      - Blogs
+ *     summary: Delete Blog
+ *     parameters:
+ *      - name: id
+ *        in: path
+ *        required: true
+ *        schema:
+ *          type: string
+ *     responses:
+ *       200:
+ *         description: Blog Deleted Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const DELETE = async (request: NextRequest, context: { params: any }) => {
 

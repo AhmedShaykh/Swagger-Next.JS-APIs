@@ -5,6 +5,23 @@ import User from "@/lib/Model/UserModel";
 import { connectDB } from "@/lib/db";
 import { Types } from "mongoose";
 
+/**
+ * @swagger
+ * tags: 
+ *    - name: Blogs
+ *      description: Operations About Blogs
+  * api/blogs?{userId}&{categoryId}:
+ *   get:
+ *     tags:
+ *      - Blogs
+ *     summary: Get Blogs
+ *     responses:
+ *       200:
+ *         description: Blogs Fetched Successfully!
+ *       400:
+ *         description: Error 404
+ */
+
 export const GET = async (request: NextRequest) => {
 
     try {
@@ -113,6 +130,34 @@ export const GET = async (request: NextRequest) => {
 
 };
 
+/**
+ * @swagger
+ * api/blogs?{userId}&{categoryId}:
+ *   post:
+ *     tags:
+ *      - Blogs
+ *     summary: Add Blog
+ *     requestBody:
+ *        required: true
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                userId:
+ *                  type: string
+ *                categoryId:
+ *                  type: string
+ *                title:
+ *                  type: string
+ *                description:
+ *                  type: string
+ *     responses:
+ *       200:
+ *         description: Blog Added Successfully!
+ *       400:
+ *         description: Error 404
+ */
 
 export const POST = async (request: NextRequest) => {
 
