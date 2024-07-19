@@ -19,13 +19,12 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         {children}
-
-        <div className="flex justify-center items-center p-4">
+        <div className="flex justify-center items-center p-4 bg-black">
           <Link
             href={"https://github.com/AhmedShaykh/Swagger-Next.JS-APIs"}
             target="_blank"
           >
-            <h1 className="font-bold">
+            <h1 className="font-bold text-white">
               CHECK MY REPO 🚀
             </h1>
           </Link>
